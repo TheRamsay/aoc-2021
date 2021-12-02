@@ -21,10 +21,10 @@ fn solve() -> (i32, i32) {
         let dir = parts[0];
         let val = parts[1].parse::<i32>().unwrap();
 
-        match dir.as_ref() {
+        match dir {
             "forward" => {
-                part2_pos.y += val * aim;
                 part1_pos.x += val;
+                part2_pos.y += val * aim;
                 part2_pos.x += val;
             }
             "up" => {
@@ -36,7 +36,7 @@ fn solve() -> (i32, i32) {
                 aim += val;
             },
             _ => {
-                panic!()
+                panic!("Wrong direction.")
             }
         }
     }
