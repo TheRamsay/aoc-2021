@@ -2,7 +2,7 @@ use std::fs;
 
 fn main() {
     let (part1_ans, part2_ans) = solve();
-    println!("Part1 answer is: {}", part1_ans); 
+    println!("Part1 answer is: {}", part1_ans);
     println!("Part2 answer is: {}", part2_ans);
 }
 
@@ -34,7 +34,7 @@ fn solve() -> (i32, i32) {
             "down" => {
                 part1_pos.y += val;
                 aim += val;
-            },
+            }
             _ => {
                 panic!("Wrong direction.")
             }
