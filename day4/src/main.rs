@@ -1,15 +1,8 @@
 use std::collections::HashSet;
 
 fn main() {
-    println!("{:?}", part1());
-    println!("{:?}", part2());
-
-    // let a: &mut i32;
-    // let mut b = 8;
-    // a = &mut b;
-    // b = 154;
-    // println!("{}", a);
-
+    println!("Part1 answer is: {}", part1());
+    println!("Part2 answer is: {}", part2());
 }
 
 fn part1() -> i32 {
@@ -24,12 +17,9 @@ fn part1() -> i32 {
                     }
                 }
             }
-        }
-        for board in boards.iter() {
+
             let is_completed = check_rows_and_columns(&board);
             if is_completed {
-                println!("{:?}", board);
-                println!("{:?}", num);
                 let sum = sum_unmarked_cells(&board);
                 return sum * num;
             }
@@ -42,9 +32,10 @@ fn part1() -> i32 {
 fn part2() -> i32 {
     let (numbers, mut boards) = parse_data();
     let mut winners: HashSet<i32> = HashSet::new();
+    let boards_count = boards.len();
 
     for num in numbers.iter() {
-        for board in boards.iter_mut() {
+        for (idx, board) in boards.iter_mut().enumerate() {
             for row in board.iter_mut() {
                 for (value, is_marked) in row.iter_mut() {
                     if value == num {
@@ -52,16 +43,12 @@ fn part2() -> i32 {
                     }
                 }
             }
-        }
-        for (idx, board) in boards.iter().enumerate() {
+
             let is_completed = check_rows_and_columns(&board);
             if is_completed {
                 if !winners.contains(&(idx as i32)) {
                     winners.insert(idx as i32);
-                    if winners.len() == boards.len() {
-                        println!("{:?}", board);
-                        println!("{:?}", num);
-                        println!("{:?}", idx);
+                    if winners.len() == boards_count {
                         let sum = sum_unmarked_cells(&board);
                         return sum * num;
                     }
@@ -74,6 +61,7 @@ fn part2() -> i32 {
 }
 
 fn parse_data() -> (Vec<i32>, Vec<Vec<Vec<(i32, bool)>>>) {
+    let line_len = 5;
     let mut data: Vec<&str> = include_str!("../input.txt")
         .lines()
         .filter(|&line| line.len() > 1)
@@ -86,9 +74,8 @@ fn parse_data() -> (Vec<i32>, Vec<Vec<Vec<(i32, bool)>>>) {
     data.remove(0);
 
     let mut boards: Vec<Vec<Vec<(i32, bool)>>> = Vec::new();
-    let matrix_size = data[1].len();
 
-    let chunks = data.chunks(5);
+    let chunks = data.chunks(line_len);
     for chunk in chunks {
         let mut board: Vec<Vec<(i32, bool)>> = Vec::new();
         for raw_line in chunk {
@@ -103,16 +90,6 @@ fn parse_data() -> (Vec<i32>, Vec<Vec<Vec<(i32, bool)>>>) {
     }
 
     (numbers, boards)
-}
-
-fn get_number(data: &Vec<i32>, value: i32) -> &i32 {
-    for num in data.iter() {
-        if *num == value {
-            return &num;
-        }
-    }
-
-    &-1
 }
 
 fn check_rows_and_columns(board: &Vec<Vec<(i32, bool)>>) -> bool {
