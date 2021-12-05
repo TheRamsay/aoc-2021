@@ -26,38 +26,32 @@ fn solve() -> (i32, i32) {
         .collect();
 
     for line in data {
-        let (x1, y1) = line[0];
+        let (mut x1, mut y1) = line[0];
         let (x2, y2) = line[1];
 
-        // Vertical
+        let mut x_step = if x2 > x1 { 1 } else { -1 };
+        let mut y_step = if y2 > y1 { 1 } else { -1 };
+
         if x1 == x2 {
-            for i in min(y1, y2)..(max(y1, y2) + 1) {
-                let val1 = map_part1.entry((x1, i)).or_insert(0);
-                let val2 = map_part2.entry((x1, i)).or_insert(0);
-                *val1 += 1;
-                *val2 += 1;
-            }
-        // Horizontal
-        } else if y1 == y2 {
-            for i in min(x1, x2)..(max(x1, x2) + 1) {
-                let val1 = map_part1.entry((i, y1)).or_insert(0);
-                let val2 = map_part2.entry((i, y1)).or_insert(0);
-                *val1 += 1;
-                *val2 += 1;
-            }
-        // Diagonal
-        } else {
-            let steps = i32::abs(x1 - x2) + 1;
-            let x_step = if x2 > x1 { 1 } else { -1 };
-            let y_step = if y2 > y1 { 1 } else { -1 };
+            x_step = 0;
 
-            for i in 0..steps {
-                let new_x = x1 + x_step * i;
-                let new_y = y1 + y_step * i;
+        } 
+        if y1 == y2 {
+            y_step = 0;
+        }
 
-                let val2 = map_part2.entry((new_x, new_y)).or_insert(0);
-                *val2 += 1;
+        while (x1 != (x2+x_step)) || (y1 != (y2+y_step)) {
+
+            if (x_step == 0) | (y_step == 0) {
+                let val1 = map_part1.entry((x1, y1)).or_insert(0);
+                *val1 += 1;
             }
+            let val2 = map_part2.entry((x1, y1)).or_insert(0);
+            *val2 += 1;
+
+            x1 += x_step;
+            y1 += y_step;
+
         }
     }
 
