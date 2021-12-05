@@ -2,7 +2,7 @@ use std::cmp;
 use std::collections::HashMap;
 
 fn main() {
-    // println!("Part1 answer is: {}", part1());
+    println!("Part1 answer is: {}", part1());
     println!("Part2 answer is: {}", part2());
 }
 
@@ -12,7 +12,6 @@ struct Counter {
 }
 
 fn part1() -> i64 {
-    // let mut bit_count: HashMap<&str, i64> = HashMap::new();
     let mut counter = Counter { ones: 0, zeroes: 0 };
     let mut gamma_rate = String::new();
     let mut epsilon_rate = String::new();
@@ -60,11 +59,10 @@ fn part2() -> i64 {
     let mut idx = 0;
     let line_len = lines[0].len();
 
-    while (oxygen_data.len() != 1) | (idx < line_len) {
+    while (oxygen_data.len() != 1) & (idx < line_len) {
         let mut counter = Counter { zeroes: 0, ones: 0 };
 
         for oxygen_line in oxygen_data.iter() {
-            println!("{}, {}", oxygen_line, idx);
             if oxygen_line.chars().nth(idx).unwrap() == '0' {
                 counter.zeroes += 1;
             } else {
@@ -84,16 +82,13 @@ fn part2() -> i64 {
             .filter(|e| e.starts_with(&oxygen_pattern))
             .collect();
 
-        println!("{:?}", oxygen_data);
-        println!("{:?}", oxygen_pattern);
     }
 
     idx = 0;
-    while (co2_data.len() != 1) | (idx < line_len) {
+
+    while (co2_data.len() != 1) & (idx < line_len) {
         let mut counter = Counter { zeroes: 0, ones: 0 };
-        
-        println!("{:?}", co2_data);
-        println!("{:?}", co2_pattern);
+
         for co2_line in co2_data.iter() {
             if co2_line.chars().nth(idx).unwrap() == '0' {
                 counter.zeroes += 1;
@@ -116,8 +111,8 @@ fn part2() -> i64 {
 
     }
 
-    // println!("Oxygen: {:?}", oxygen_data);
-    println!("CO2: {:?}", co2_data);
+    let oxygen_val = i64::from_str_radix(&oxygen_data[0], 2).unwrap();
+    let co2_val = i64::from_str_radix(&co2_data[0], 2).unwrap();
 
-    3
+    oxygen_val * co2_val
 }
