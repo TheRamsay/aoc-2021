@@ -1,5 +1,3 @@
-use std::cmp::max;
-use std::cmp::min;
 use std::collections::HashMap;
 
 fn main() {
@@ -34,14 +32,12 @@ fn solve() -> (i32, i32) {
 
         if x1 == x2 {
             x_step = 0;
-
-        } 
+        }
         if y1 == y2 {
             y_step = 0;
         }
 
-        while (x1 != (x2+x_step)) || (y1 != (y2+y_step)) {
-
+        while (x1 != (x2 + x_step)) || (y1 != (y2 + y_step)) {
             if (x_step == 0) | (y_step == 0) {
                 let val1 = map_part1.entry((x1, y1)).or_insert(0);
                 *val1 += 1;
@@ -51,7 +47,6 @@ fn solve() -> (i32, i32) {
 
             x1 += x_step;
             y1 += y_step;
-
         }
     }
 
