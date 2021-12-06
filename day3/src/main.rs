@@ -1,6 +1,3 @@
-use std::cmp;
-use std::collections::HashMap;
-
 fn main() {
     println!("Part1 answer is: {}", part1());
     println!("Part2 answer is: {}", part2());
