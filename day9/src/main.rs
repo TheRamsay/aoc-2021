@@ -2,11 +2,6 @@ use std::cmp::Ordering;
 use std::collections::HashSet;
 use std::collections::VecDeque;
 
-fn main() {
-    println!("{}", part1());
-    println!("{}", part2());
-}
-
 fn get_all_lowest_points(data: &Vec<Vec<i32>>) -> Vec<(usize, usize)> {
     let mut lowest_points = Vec::new();
     for i in 0..data.len() {
@@ -18,17 +13,6 @@ fn get_all_lowest_points(data: &Vec<Vec<i32>>) -> Vec<(usize, usize)> {
     }
 
     lowest_points
-}
-
-fn part1() -> i32 {
-    let data = parse_data();
-    let lowest_points = get_all_lowest_points(&data);
-    let mut ans = 0;
-    for (x, y) in lowest_points {
-        ans += data[y][x] + 1;
-    }
-
-    ans
 }
 
 fn parse_data() -> Vec<Vec<i32>> {
@@ -75,6 +59,17 @@ fn get_neighbours(x: i32, y: i32, data: &Vec<Vec<i32>>) -> Vec<(usize, usize)> {
     neighbours
 }
 
+fn part1() -> i32 {
+    let data = parse_data();
+    let lowest_points = get_all_lowest_points(&data);
+    let mut ans = 0;
+    for (x, y) in lowest_points {
+        ans += data[y][x] + 1;
+    }
+
+    ans
+}
+
 fn part2() -> usize {
     let data = parse_data();
     let lowest_points = get_all_lowest_points(&data);
@@ -84,11 +79,15 @@ fn part2() -> usize {
         let mut queue: VecDeque<(usize, usize)> = VecDeque::new();
         let mut basin: HashSet<(usize, usize)> = HashSet::new();
         let mut visited: HashSet<(usize, usize)> = HashSet::new();
+
         queue.push_back((*x, *y));
+
         while !queue.is_empty() {
             let (point_x, point_y) = queue.pop_front().unwrap();
             visited.insert((point_x, point_y));
+
             let val = data[point_y][point_x];
+
             if val == 9 {
                 continue;
             }
@@ -119,5 +118,9 @@ fn part2() -> usize {
     });
 
     sorted_basins[0].len() * sorted_basins[1].len() * sorted_basins[2].len()
+}
 
+fn main() {
+    println!("{}", part1());
+    println!("{}", part2());
 }
