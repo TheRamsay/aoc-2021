@@ -72,25 +72,24 @@ fn part2() -> i128 {
 
     for line in lines.iter() {
         let mut stack: Vec<char> = Vec::new();
+
         if let Some(_) = line_is_valid(line, &opening_brackets, &closing_brackets, &mut stack) {
             continue;
         }
 
-        let mut ans: i128 = 0;
-
-        for _ in 0..stack.len() {
-            let x = stack.pop().unwrap();
-            let correct = opening_brackets.get(&x).unwrap();
-            ans *= 5;
+        let val = stack.iter().rev().fold(0, |score, c| {
+            let correct = opening_brackets.get(c).unwrap();
             match correct {
-                ')' => ans += 1,
-                ']' => ans += 2,
-                '}' => ans += 3,
-                '>' => ans += 4,
-                _ => (),
+                ')' => score * 5 + 1,
+                ']' => score * 5 + 2,
+                '}' => score * 5 + 3,
+                '>' => score * 5 + 4,
+                _ => unreachable!(),
             }
-        }
-        line_values.push(ans);
+        });
+
+        line_values.push(val);
+
     }
 
     line_values.sort();
