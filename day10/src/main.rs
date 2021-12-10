@@ -26,7 +26,7 @@ fn line_is_valid(
     line: &String,
     opening_brackets: &HashMap<char, char>,
     closing_brackets: &HashMap<char, char>,
-    stack: &mut Vec<char>
+    stack: &mut Vec<char>,
 ) -> Option<char> {
     for ch in line.chars() {
         if opening_brackets.contains_key(&ch) {
@@ -89,7 +89,6 @@ fn part2() -> i128 {
         });
 
         line_values.push(val);
-
     }
 
     line_values.sort();
