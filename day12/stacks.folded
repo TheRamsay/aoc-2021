@@ -1,0 +1,296 @@
+day12;<&alloc::vec::Vec<T,A> as core::iter::traits::collect::IntoIterator>::into_iter 7
+day12;<I as core::iter::traits::collect::IntoIterator>::into_iter 38
+day12;<T as alloc::borrow::ToOwned>::to_owned 16
+day12;<T as core::borrow::Borrow<T>>::borrow 5
+day12;<T as core::convert::Into<U>>::into 180
+day12;<T as core::slice::cmp::SliceContains>::slice_contains 7
+day12;<T as core::slice::cmp::SliceContains>::slice_contains::{{closure}} 26
+day12;<[A] as core::slice::cmp::SlicePartialEq<B>>::equal 158
+day12;<alloc::alloc::Global as core::alloc::Allocator>::allocate 25
+day12;<alloc::alloc::Global as core::alloc::Allocator>::deallocate 250
+day12;<alloc::alloc::Global as core::clone::Clone>::clone 7
+day12;<alloc::raw_vec::RawVec<T,A> as core::ops::drop::Drop>::drop 562
+day12;<alloc::string::String as alloc::string::ToString>::to_string 20
+day12;<alloc::string::String as core::clone::Clone>::clone 264
+day12;<alloc::string::String as core::cmp::PartialEq<&str>>::eq 13
+day12;<alloc::string::String as core::cmp::PartialEq>::eq 62
+day12;<alloc::string::String as core::hash::Hash>::hash 47
+day12;<alloc::string::String as core::ops::deref::Deref>::deref 107
+day12;<alloc::string::String as core::ops::index::Index<core::ops::range::RangeFull>>::index 77
+day12;<alloc::vec::Vec<T,A> as core::ops::deref::Deref>::deref 157
+day12;<alloc::vec::Vec<T,A> as core::ops::drop::Drop>::drop 106
+day12;<core::core_arch::x86::__m128i as core::core_arch::x86::m128iExt>::as_m128i 300
+day12;<core::hash::sip::Hasher<S> as core::hash::Hasher>::finish 163
+day12;<core::hash::sip::Hasher<S> as core::hash::Hasher>::write 331
+day12;<core::hash::sip::Sip13Rounds as core::hash::sip::Sip>::c_rounds 758
+day12;<core::hash::sip::Sip13Rounds as core::hash::sip::Sip>::d_rounds 2082
+day12;<core::hash::sip::SipHasher13 as core::hash::Hasher>::finish 58
+day12;<core::hash::sip::SipHasher13 as core::hash::Hasher>::write 46
+day12;<core::ops::control_flow::ControlFlow<B,C> as core::cmp::PartialEq>::eq 53
+day12;<core::ops::control_flow::ControlFlow<B,C> as core::ops::try_trait::FromResidual>::from_residual 8
+day12;<core::ops::control_flow::ControlFlow<B,C> as core::ops::try_trait::Try>::branch 58
+day12;<core::ops::control_flow::ControlFlow<B,C> as core::ops::try_trait::Try>::from_output 14
+day12;<core::option::Option<T> as core::ops::try_trait::FromResidual>::from_residual 45
+day12;<core::option::Option<T> as core::ops::try_trait::Try>::branch 177
+day12;<core::ptr::non_null::NonNull<T> as core::convert::From<core::ptr::unique::Unique<T>>>::from 165
+day12;<core::ptr::unique::Unique<T> as core::convert::From<&mut T>>::from 13
+day12;<core::result::Result<T,E> as core::ops::try_trait::Try>::branch 82
+day12;<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::any 78
+day12;<core::slice::iter::Iter<T> as core::iter::traits::iterator::Iterator>::next 499
+day12;<core::str::iter::Chars as core::iter::traits::iterator::Iterator>::next 62
+day12;<core::str::iter::Chars as core::iter::traits::iterator::Iterator>::next::{{closure}} 45
+day12;<hashbrown::map::HashMap<K,V,S> as core::clone::Clone>::clone 46
+day12;<hashbrown::raw::RawIter<T> as core::iter::traits::iterator::Iterator>::next 558
+day12;<hashbrown::raw::RawIterHash<T,A> as core::iter::traits::iterator::Iterator>::next 53
+day12;<hashbrown::raw::RawIterHashInner<A> as core::iter::traits::iterator::Iterator>::next 84
+day12;<hashbrown::raw::RawIterRange<T> as core::iter::traits::iterator::Iterator>::next 959
+day12;<hashbrown::raw::RawTable<T,A> as core::clone::Clone>::clone 180
+day12;<hashbrown::raw::RawTable<T,A> as core::ops::drop::Drop>::drop 39
+day12;<hashbrown::raw::RawTable<T,A> as hashbrown::raw::RawTableClone>::clone_from_spec 7
+day12;<hashbrown::raw::bitmask::BitMask as core::iter::traits::collect::IntoIterator>::into_iter 36
+day12;<hashbrown::raw::bitmask::BitMaskIter as core::iter::traits::iterator::Iterator>::next 86
+day12;<hashbrown::scopeguard::ScopeGuard<T,F> as core::ops::deref::Deref>::deref 17
+day12;<hashbrown::scopeguard::ScopeGuard<T,F> as core::ops::deref::DerefMut>::deref_mut 40
+day12;<hashbrown::scopeguard::ScopeGuard<T,F> as core::ops::drop::Drop>::drop 3
+day12;<hashbrown::set::HashSet<T,S> as core::clone::Clone>::clone 16
+day12;<std::collections::hash::map::DefaultHasher as core::hash::Hasher>::finish 46
+day12;<std::collections::hash::map::DefaultHasher as core::hash::Hasher>::write 49
+day12;<std::collections::hash::map::RandomState as core::clone::Clone>::clone 47
+day12;<std::collections::hash::map::RandomState as core::hash::BuildHasher>::build_hasher 37
+day12;<std::collections::hash::set::HashSet<T,S> as core::clone::Clone>::clone 16
+day12;<usize as core::slice::index::SliceIndex<[T]>>::get_unchecked 95
+day12;[unknown] 20
+day12;__memcmp_sse4_1 142
+day12;__memcpy_ssse3_back 1356
+day12;__memset_avx2_unaligned 4
+day12;__rdl_alloc 63
+day12;__rdl_dealloc 22
+day12;__rust_alloc 21
+day12;__rust_dealloc 16
+day12;_dl_lookup_symbol_x 1
+day12;_dl_map_object_from_fd 1
+day12;_dl_start 1
+day12;_int_free 650
+day12;_int_malloc 206
+day12;_start 6
+day12;alloc::alloc::Global::alloc_impl 140
+day12;alloc::alloc::alloc 39
+day12;alloc::alloc::dealloc 176
+day12;alloc::alloc::exchange_malloc 43
+day12;alloc::boxed::Box<T,A>::into_raw_with_allocator 19
+day12;alloc::boxed::Box<T,A>::into_unique 20
+day12;alloc::boxed::Box<T,A>::leak 21
+day12;alloc::raw_vec::RawVec<T,A>::current_memory 632
+day12;alloc::raw_vec::RawVec<T,A>::from_raw_parts_in 15
+day12;alloc::raw_vec::RawVec<T,A>::ptr 167
+day12;alloc::slice::<impl [T]>::into_vec 3
+day12;alloc::slice::hack::into_vec 23
+day12;alloc::string::String::as_str 6
+day12;alloc::vec::Vec<T,A>::as_mut_ptr 79
+day12;alloc::vec::Vec<T,A>::as_ptr 141
+day12;alloc::vec::Vec<T,A>::from_raw_parts_in 21
+day12;cfree@GLIBC_2.2.5 347
+day12;core::alloc::layout::Layout::align 247
+day12;core::alloc::layout::Layout::from_size_align_unchecked 214
+day12;core::alloc::layout::Layout::new 74
+day12;core::alloc::layout::Layout::repeat 1
+day12;core::alloc::layout::Layout::size 181
+day12;core::alloc::layout::size_align 42
+day12;core::char::convert::from_u32_unchecked 38
+day12;core::clone::Clone::clone 165
+day12;core::clone::impls::<impl core::clone::Clone for u64>::clone 18
+day12;core::cmp::Ord::max 18
+day12;core::cmp::Ord::min 49
+day12;core::cmp::impls::<impl core::cmp::Ord for usize>::cmp 187
+day12;core::cmp::impls::<impl core::cmp::PartialEq for ()>::eq 5
+day12;core::cmp::impls::<impl core::cmp::PartialEq<&B> for &A>::eq 123
+day12;core::cmp::max_by 117
+day12;core::cmp::min 42
+day12;core::cmp::min_by 379
+day12;core::core_arch::simd::i8x16::new 199
+day12;core::core_arch::x86::m128iExt::as_i8x16 549
+day12;core::core_arch::x86::sse2::_mm_cmpeq_epi8 432
+day12;core::core_arch::x86::sse2::_mm_load_si128 10
+day12;core::core_arch::x86::sse2::_mm_loadu_si128 92
+day12;core::core_arch::x86::sse2::_mm_movemask_epi8 753
+day12;core::core_arch::x86::sse2::_mm_set1_epi8 45
+day12;core::core_arch::x86::sse2::_mm_set_epi8 274
+day12;core::core_arch::x86::sse2::_mm_undefined_si128 358
+day12;core::hash::Hasher::write_u8 45
+day12;core::hash::impls::<impl core::hash::Hash for str>::hash 80
+day12;core::hash::sip::Hasher<S>::new_with_keys 99
+day12;core::hash::sip::Hasher<S>::reset 57
+day12;core::hash::sip::SipHasher13::new_with_keys 30
+day12;core::hash::sip::u8to64_le 400
+day12;core::intrinsics::copy_nonoverlapping 90
+day12;core::intrinsics::write_bytes 5
+day12;core::iter::traits::iterator::Iterator::all 30
+day12;core::iter::traits::iterator::Iterator::all::check 2
+day12;core::iter::traits::iterator::Iterator::all::check::{{closure}} 80
+day12;core::iter::traits::iterator::Iterator::try_fold 239
+day12;core::mem::forget 40
+day12;core::mem::needs_drop 34
+day12;core::mem::replace 26
+day12;core::mem::size_of_val 24
+day12;core::mem::swap 4
+day12;core::num::<impl usize>::checked_add 295
+day12;core::num::<impl usize>::checked_mul 179
+day12;core::num::<impl usize>::next_power_of_two 1
+day12;core::num::<impl usize>::one_less_than_next_power_of_two 7
+day12;core::num::nonzero::NonZeroUsize::get 69
+day12;core::num::nonzero::NonZeroUsize::new_unchecked 145
+day12;core::ops::function::FnOnce::call_once 114
+day12;core::option::Option<T>::is_none 15
+day12;core::option::Option<T>::is_some 37
+day12;core::option::Option<T>::map 135
+day12;core::option::Option<T>::ok_or 34
+day12;core::option::Option<T>::ok_or_else 8
+day12;core::option::Option<T>::unwrap 4
+day12;core::ptr::const_ptr::<impl *const T>::cast 71
+day12;core::ptr::const_ptr::<impl *const T>::guaranteed_eq 125
+day12;core::ptr::const_ptr::<impl *const T>::is_null 140
+day12;core::ptr::const_ptr::<impl *const T>::offset_from 462
+day12;core::ptr::const_ptr::<impl *const [T]>::as_ptr 15
+day12;core::ptr::drop_in_place<(alloc::string::String,())> 35
+day12;core::ptr::drop_in_place<alloc::raw_vec::RawVec<&str>> 10
+day12;core::ptr::drop_in_place<alloc::raw_vec::RawVec<u8>> 44
+day12;core::ptr::drop_in_place<alloc::string::String> 55
+day12;core::ptr::drop_in_place<alloc::vec::Vec<&str>> 12
+day12;core::ptr::drop_in_place<alloc::vec::Vec<u8>> 94
+day12;core::ptr::drop_in_place<hashbrown::map::HashMap<alloc::string::String,(),std::collections::hash::map::RandomState>> 10
+day12;core::ptr::drop_in_place<hashbrown::raw::RawTable<(alloc::string::String,())>> 14
+day12;core::ptr::drop_in_place<hashbrown::scopeguard::ScopeGuard<hashbrown::raw::RawTableInner<alloc::alloc::Global>,hashbrown::raw::RawTableInner<alloc::alloc::Global>::prepare_resize::{{closure}}>> 3
+day12;core::ptr::drop_in_place<hashbrown::set::HashSet<alloc::string::String,std::collections::hash::map::RandomState>> 14
+day12;core::ptr::drop_in_place<std::collections::hash::set::HashSet<alloc::string::String>> 24
+day12;core::ptr::metadata::from_raw_parts 96
+day12;core::ptr::metadata::from_raw_parts_mut 98
+day12;core::ptr::mut_ptr::<impl *mut T>::guaranteed_eq 825
+day12;core::ptr::mut_ptr::<impl *mut T>::is_null 693
+day12;core::ptr::mut_ptr::<impl *mut T>::sub 1764
+day12;core::ptr::non_null::NonNull<T>::as_ptr 722
+day12;core::ptr::non_null::NonNull<T>::cast 30
+day12;core::ptr::non_null::NonNull<T>::new 53
+day12;core::ptr::non_null::NonNull<T>::new_unchecked 653
+day12;core::ptr::non_null::NonNull<[T]>::as_mut_ptr 18
+day12;core::ptr::non_null::NonNull<[T]>::as_non_null_ptr 44
+day12;core::ptr::non_null::NonNull<[T]>::slice_from_raw_parts 55
+day12;core::ptr::read 18
+day12;core::ptr::slice_from_raw_parts 133
+day12;core::ptr::slice_from_raw_parts_mut 154
+day12;core::ptr::swap_nonoverlapping 4
+day12;core::ptr::swap_nonoverlapping_bytes 17
+day12;core::ptr::swap_nonoverlapping_one 5
+day12;core::ptr::unique::Unique<T>::as_ptr 219
+day12;core::ptr::unique::Unique<T>::cast 100
+day12;core::ptr::unique::Unique<T>::new_unchecked 102
+day12;core::ptr::write 267
+day12;core::result::Result<T,E>::is_err 3
+day12;core::result::Result<T,E>::is_ok 2
+day12;core::result::Result<T,E>::map 60
+day12;core::result::Result<T,E>::map_err 45
+day12;core::slice::<impl [T]>::as_ptr 50
+day12;core::slice::<impl [T]>::contains 11
+day12;core::slice::<impl [T]>::get_unchecked 54
+day12;core::slice::<impl [T]>::iter 29
+day12;core::slice::<impl [T]>::len 2
+day12;core::slice::cmp::<impl core::cmp::PartialEq<[B]> for [A]>::eq 60
+day12;core::slice::iter::Iter<T>::new 90
+day12;core::slice::raw::from_raw_parts 119
+day12;core::str::<impl str>::chars 43
+day12;core::str::converts::from_utf8_unchecked 122
+day12;core::str::traits::<impl core::cmp::PartialEq for str>::eq 170
+day12;core::str::traits::<impl core::ops::index::Index<I> for str>::index 3
+day12;core::str::traits::<impl core::slice::index::SliceIndex<str> for core::ops::range::RangeFull>::index 1
+day12;core::str::validations::next_code_point 174
+day12;day12::Graph::day1 7
+day12;day12::Graph::day2 309
+day12;day12::is_lowercase 37
+day12;day12::is_lowercase::{{closure}} 31
+day12;do_lookup_x 2
+day12;hashbrown::map::HashMap<K,V,S,A>::contains_key 28
+day12;hashbrown::map::HashMap<K,V,S,A>::get 5
+day12;hashbrown::map::HashMap<K,V,S,A>::get_inner 23
+day12;hashbrown::map::HashMap<K,V,S,A>::insert 77
+day12;hashbrown::map::equivalent_key 9
+day12;hashbrown::map::equivalent_key::{{closure}} 57
+day12;hashbrown::map::make_hash 65
+day12;hashbrown::map::make_hasher 2
+day12;hashbrown::map::make_hasher::{{closure}} 6
+day12;hashbrown::map::make_insert_hash 37
+day12;hashbrown::raw::Bucket<T>::as_mut 8
+day12;hashbrown::raw::Bucket<T>::as_ptr 589
+day12;hashbrown::raw::Bucket<T>::as_ref 102
+day12;hashbrown::raw::Bucket<T>::copy_from_nonoverlapping 15
+day12;hashbrown::raw::Bucket<T>::drop 148
+day12;hashbrown::raw::Bucket<T>::from_base_index 418
+day12;hashbrown::raw::Bucket<T>::next_n 499
+day12;hashbrown::raw::Bucket<T>::to_base_index 164
+day12;hashbrown::raw::Bucket<T>::write 289
+day12;hashbrown::raw::RawIterHash<T,A>::new 28
+day12;hashbrown::raw::RawIterHashInner<A>::new 279
+day12;hashbrown::raw::RawIterRange<T>::new 120
+day12;hashbrown::raw::RawTable<T,A>::bucket 159
+day12;hashbrown::raw::RawTable<T,A>::bucket_index 131
+day12;hashbrown::raw::RawTable<T,A>::clone_from_impl 793
+day12;hashbrown::raw::RawTable<T,A>::data_end 311
+day12;hashbrown::raw::RawTable<T,A>::drop_elements 307
+day12;hashbrown::raw::RawTable<T,A>::find 177
+day12;hashbrown::raw::RawTable<T,A>::free_buckets 15
+day12;hashbrown::raw::RawTable<T,A>::get 32
+day12;hashbrown::raw::RawTable<T,A>::get_mut 29
+day12;hashbrown::raw::RawTable<T,A>::insert 34
+day12;hashbrown::raw::RawTable<T,A>::iter 194
+day12;hashbrown::raw::RawTable<T,A>::iter_hash 14
+day12;hashbrown::raw::RawTable<T,A>::len 4
+day12;hashbrown::raw::RawTable<T,A>::new_uninitialized 95
+day12;hashbrown::raw::RawTable<T,A>::reserve 7
+day12;hashbrown::raw::RawTable<T,A>::reserve_rehash 15
+day12;hashbrown::raw::RawTable<T,A>::resize 86
+day12;hashbrown::raw::RawTableInner<A>::bucket 43
+day12;hashbrown::raw::RawTableInner<A>::buckets 33
+day12;hashbrown::raw::RawTableInner<A>::ctrl 249
+day12;hashbrown::raw::RawTableInner<A>::data_end 36
+day12;hashbrown::raw::RawTableInner<A>::fallible_with_capacity 28
+day12;hashbrown::raw::RawTableInner<A>::find_insert_slot 221
+day12;hashbrown::raw::RawTableInner<A>::free_buckets 114
+day12;hashbrown::raw::RawTableInner<A>::is_empty_singleton 23
+day12;hashbrown::raw::RawTableInner<A>::new_uninitialized 215
+day12;hashbrown::raw::RawTableInner<A>::num_ctrl_bytes 4
+day12;hashbrown::raw::RawTableInner<A>::prepare_insert_slot 16
+day12;hashbrown::raw::RawTableInner<A>::prepare_resize 18
+day12;hashbrown::raw::RawTableInner<A>::prepare_resize::{{closure}} 8
+day12;hashbrown::raw::RawTableInner<A>::probe_seq 100
+day12;hashbrown::raw::RawTableInner<A>::record_item_insert_at 15
+day12;hashbrown::raw::RawTableInner<A>::set_ctrl 91
+day12;hashbrown::raw::RawTableInner<A>::set_ctrl_h2 18
+day12;hashbrown::raw::TableLayout::calculate_layout_for 180
+day12;hashbrown::raw::TableLayout::new 56
+day12;hashbrown::raw::alloc::inner::do_alloc 40
+day12;hashbrown::raw::alloc::inner::do_alloc::{{closure}} 19
+day12;hashbrown::raw::bitmask::BitMask::any_bit_set 7
+day12;hashbrown::raw::bitmask::BitMask::invert 57
+day12;hashbrown::raw::bitmask::BitMask::lowest_set_bit 619
+day12;hashbrown::raw::bitmask::BitMask::lowest_set_bit_nonzero 632
+day12;hashbrown::raw::bitmask::BitMask::remove_lowest_bit 307
+day12;hashbrown::raw::bucket_mask_to_capacity 18
+day12;hashbrown::raw::capacity_to_buckets 5
+day12;hashbrown::raw::h1 20
+day12;hashbrown::raw::h2 46
+day12;hashbrown::raw::is_full 15
+day12;hashbrown::raw::offset_from 71
+day12;hashbrown::raw::special_is_empty 2
+day12;hashbrown::raw::sse2::Group::load 177
+day12;hashbrown::raw::sse2::Group::load_aligned 109
+day12;hashbrown::raw::sse2::Group::match_byte 288
+day12;hashbrown::raw::sse2::Group::match_empty 16
+day12;hashbrown::raw::sse2::Group::match_empty_or_deleted 87
+day12;hashbrown::raw::sse2::Group::match_full 191
+day12;hashbrown::scopeguard::guard 16
+day12;hashbrown::set::HashSet<T,S,A>::contains 26
+day12;hashbrown::set::HashSet<T,S,A>::insert 57
+day12;malloc 556
+day12;memcpy@plt 47
+day12;realloc 1
+day12;std::collections::hash::map::HashMap<K,V,S>::get 1
+day12;std::collections::hash::set::HashSet<T,S>::contains 19
+day12;std::collections::hash::set::HashSet<T,S>::insert 32
