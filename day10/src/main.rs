@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 fn parse_data() -> Vec<String> {
-    include_str!("../input.txt")
+    include_str!("../message.txt")
         .lines()
         .map(|l| l.to_string())
         .collect()
@@ -22,7 +22,7 @@ fn generate_brackets_map() -> (HashMap<char, char>, HashMap<char, char>) {
     (opening_brackets, closing_brackets)
 }
 
-fn line_is_valid(
+fn find_invalid_bracket(
     line: &String,
     opening_brackets: &HashMap<char, char>,
     closing_brackets: &HashMap<char, char>,
@@ -50,7 +50,9 @@ fn part1() -> i32 {
 
     for line in lines.iter() {
         let mut stack: Vec<char> = Vec::new();
-        if let Some(ch) = line_is_valid(line, &opening_brackets, &closing_brackets, &mut stack) {
+        if let Some(ch) =
+            find_invalid_bracket(line, &opening_brackets, &closing_brackets, &mut stack)
+        {
             match ch {
                 ')' => ans += 3,
                 ']' => ans += 57,
@@ -73,7 +75,9 @@ fn part2() -> i128 {
     for line in lines.iter() {
         let mut stack: Vec<char> = Vec::new();
 
-        if let Some(_) = line_is_valid(line, &opening_brackets, &closing_brackets, &mut stack) {
+        if let Some(_) =
+            find_invalid_bracket(line, &opening_brackets, &closing_brackets, &mut stack)
+        {
             continue;
         }
 

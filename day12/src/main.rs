@@ -6,6 +6,7 @@ use std::time::Instant;
 #[derive(Debug)]
 struct Graph {
     _graph: HashMap<String, Vec<String>>,
+    calls: i32,
 }
 
 impl Graph {
@@ -27,7 +28,7 @@ impl Graph {
                 .push(start.to_string());
         }
 
-        Graph { _graph }
+        Graph { _graph , calls: 0}
     }
 
     fn day1(&self, node: String, end: &str, visited: &mut HashSet<String>) -> i32 {
@@ -50,24 +51,31 @@ impl Graph {
         ans
     }
 
-    fn day2(&self, node: String, end: &str, visited: &mut HashSet<String>, can_twice: bool) -> i32 {
+    fn day2(
+        &mut self,
+        node: &String,
+        end: &str,
+        visited: &mut HashSet<String>,
+        can_twice: bool,
+    ) -> i32 {
+        self.calls += 1;
         if node == end {
             return 1;
         }
 
         let mut ans = 0;
 
-        for nei in self._graph.get(&node).unwrap() {
+        for nei in self._graph.get(node).unwrap() {
             let mut x = visited.clone();
             x.insert(node.to_string());
             if is_lowercase(nei) {
                 if !visited.contains(nei) {
-                    ans += self.day2(nei.to_string(), end, &mut x, can_twice);
+                    ans += self.day2(nei, end, &mut x, can_twice);
                 } else if can_twice & !vec!["start", "end"].contains(&nei.as_str()) {
-                    ans += self.day2(nei.to_string(), end, &mut x, false);
+                    ans += self.day2(nei, end, &mut x, false);
                 }
             } else {
-                ans += self.day2(nei.to_string(), end, &mut x, can_twice);
+                ans += self.day2(nei, end, &mut x, can_twice);
             }
         }
 
@@ -97,7 +105,7 @@ fn main() {
     visited.insert(String::from("start"));
     println!(
         "{:?}",
-        graph.day2(String::from("start"), "end", &mut visited, true)
+        graph.day2(&String::from("start"), "end", &mut visited, true)
     );
     println!("Elapsed time: {:.2?}", before.elapsed())
 }
