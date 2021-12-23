@@ -1,0 +1,28 @@
+fn main() {
+    let a = parse_input();
+    println!("{:?}", data);
+}
+
+
+struct Line {
+    command: String,
+    ranges: Vec<(i32, i32)>,
+}
+
+
+
+
+fn parse_input() -> Vec<Line> {
+    let mut data = Vec::new();
+    for line in include_str!("../test.txt").lines() {
+        let (command, _coords) = line.split_once(" ").unwrap();
+        let ranges = _coords.split(",").map(|e| {
+            let p = e[2..].split_once("..").unwrap();
+            (p.0.parse().unwrap(), p.1.parse().unwrap())
+            }).collect::<Vec<(i32, i32)>>();
+        let line = Line { command: String::from(command), ranges };
+        data.push(line);
+    }
+
+    data
+}
