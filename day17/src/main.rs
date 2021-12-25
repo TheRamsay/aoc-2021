@@ -1,3 +1,4 @@
+use std::cmp::max;
 use std::cmp::min;
 use std::collections::HashSet;
 
@@ -15,15 +16,19 @@ fn parse_data() -> ((i128, i128), (i128, i128)) {
     (x_range, y_range)
 }
 
-fn check_all(x_range: (i128, i128), y_range: (i128, i128)) -> i128 {
+fn check_all(x_range: (i128, i128), y_range: (i128, i128)) -> (i128, usize) {
     let mut peeks: HashSet<i128> = HashSet::new();
-    for i in -1000..1000 {
-        for j in -1000..1000 {
-            peeks.insert(simulate_trajectory(i, j, x_range, y_range));
+    let mut vectors = HashSet::new();
+    for i in 0..x_range.1 {
+        for j in -250..250 {
+            if let Some((height, vector)) = (simulate_trajectory(i, j, x_range, y_range)) {
+                peeks.insert(height);
+                vectors.insert(vector);
+            }
         }
     }
 
-    *peeks.iter().max().unwrap()
+    (*peeks.iter().max().unwrap(), vectors.len())
 }
 
 fn simulate_trajectory(
@@ -31,17 +36,18 @@ fn simulate_trajectory(
     mut vy: i128,
     x_range: (i128, i128),
     y_range: (i128, i128),
-) -> i128 {
+) -> Option<(i128, (i128, i128))> {
+    let start = (vx, vy);
     let mut x = 0;
     let mut y = 0;
     let mut highest = y;
     loop {
         if point_in_rect((x, y), x_range, y_range) {
-            return highest;
+            return Some((highest, start));
         }
 
         if (vy < 0) & (y < min(y_range.0, y_range.1)) {
-            return i128::MIN;
+            return None;
         }
 
         x += vx;
@@ -60,28 +66,17 @@ fn simulate_trajectory(
     }
 }
 
-fn part1() -> i128 {
-    let (x_range, y_range) = parse_data();
-    check_all(x_range, y_range)
+fn point_in_rect(point: (i128, i128), x_range: (i128, i128), y_range: (i128, i128)) -> bool {
+    let x1 = min(x_range.0, x_range.1);
+    let x2 = max(x_range.0, x_range.1);
+    let y1 = min(y_range.0, y_range.1);
+    let y2 = max(y_range.0, y_range.1);
+    ((point.0 >= x1) & (point.0 <= x2)) & ((point.1 >= y1) & (point.1 <= y2))
 }
 
 fn main() {
-    println!("Part1 answer is: {}", part1());
-}
-
-fn point_in_rect(
-    point: (i128, i128),
-    mut x_range: (i128, i128),
-    mut y_range: (i128, i128),
-) -> bool {
-    if y_range.0 > y_range.1 {
-        x_range = (x_range.1, x_range.0);
-    }
-
-    if y_range.0 > y_range.1 {
-        y_range = (y_range.1, y_range.0);
-    }
-
-    ((point.0 >= x_range.0) & (point.0 <= x_range.1))
-        & ((point.0 >= y_range.0) & (point.1 <= y_range.1))
+    let (x_range, y_range) = parse_data();
+    let (part1, part2) = check_all(x_range, y_range);
+    println!("Part1 answer is: {:?}", part1);
+    println!("Part1 answer is: {:?}", part2);
 }
