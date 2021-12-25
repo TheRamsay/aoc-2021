@@ -51,4 +51,8 @@ fn run(steps: &Vec<Line>) {
     let ans: i32 = cubes.values().sum();
     println!("{}", ans);
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f1ff72e17902900aed993f3b5ea0d9ae39cf02a9
